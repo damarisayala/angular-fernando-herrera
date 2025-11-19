@@ -1,4 +1,5 @@
 import { Component, signal } from '@angular/core';
+import { CharacterListComponent } from "../../Components/dragonball/character-list/character-list.component";
 
 interface Character {
   id: number;
@@ -6,17 +7,17 @@ interface Character {
   power: number;
 }
 @Component({
-  templateUrl: './dragonball-page.component.html',
+  templateUrl: './dragonball-super-page.component.html',
+  selector: 'Dragonball-super',
+  imports: [CharacterListComponent],
 })
-export class DragonballPageComponent {
-  name = signal('Gohan');
-  power = signal(100);
+export class DragonballSuperPageComponent {
+  name = signal('');
+  power = signal(0);
 
   characters = signal<Character[]>([
     { id: 1, name: 'One push', power: 9001 },
-    { id: 2, name: 'Zonic', power: 1500 },
-    { id: 3, name: 'Hero', power: 600 },
-    { id: 4, name: 'Yancha', power: 500 }
+    //{ id: 2, name: 'Zonic', power: 1500 },
   ]);
 
   addCharacter() {
